@@ -1,1 +1,9 @@
-<!--  -->
+<?xml version="1.0" encoding="UTF-8"?>
+<wdkModel>
+
+    <import file="sequenceRecord.xml" />
+    <import file="sequenceRecordQueries.xml" />
+    <import file="groupRecord.xml" />
+    <import file="groupRecordQueries.xml" />
+
+</wdkModel>

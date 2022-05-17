@@ -1,28 +1,29 @@
-<project name="SiteSearchData-OrthoMCL" default="Installation" basedir=".">
+<project name="SiteSearchData-OrthoMCL" basedir=".">
 
-  <import file="${projectsDir}/WDK/build.xml" />
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooo  Dependencies  oooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 
+	<import file="${projectsDir}/WDK/build.xml" />
 
-  <target name="SiteSearchData-OrthoMCL-Installation" depends="WDK-Installation, 
-                                                      SiteSearchData-OrthoMCL-MavenInstallation,
-                                                      SiteSearchData-OrthoMCL/Model-Installation">
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooo  Installation  oooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+
+  <target name="SiteSearchData-OrthoMCL-Installation" depends="WDK-Installation,
+                                                               SiteSearchData-OrthoMCL/Model-Installation">
     <ant target="defaultProjectInstall">
       <property name="project" value="SiteSearchData-OrthoMCL" />
     </ant>
   </target>
+
+  <!-- ooooooooooooooooooooooo  Install Components  ooooooooooooooooooooooo -->
 
   <target name="SiteSearchData-OrthoMCL/Model-Installation">
     <ant target="defaultComponentInstall">
       <property name="project" value="SiteSearchData-OrthoMCL" />
       <property name="component" value="Model" />
     </ant>
-  </target>
-
-  <target name="SiteSearchData-OrthoMCL-MavenInstallation">
-    <ant target="mavenBuildProject">
-      <property name="project" value="SiteSearchData-OrthoMCL" />
-    </ant>
-    <property name="alreadyBuilt" value="true" />
   </target>
 
 </project>
